@@ -12,3 +12,4 @@
 - Updated tutorial to install OpenCode via `brew install anomalyco/tap/opencode`.
 - Updated tutorial to install Bun explicitly via `brew install oven-sh/bun/bun`.
 - Updated setup guide with WSL2 hostname configuration (`/etc/wsl.conf`, `/etc/hostname`, `/etc/hosts`) and restart/verification steps.
+- Updated setup guide to include Git identity setup and explicit Fish PATH setup for `/usr/local/bun` after installing `aicommit`.

@@ -58,6 +58,13 @@ sudo apt update
 sudo apt install -y fish curl jq perl python3 git unzip
 ```
 
+Set Git identity (recommended):
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
 Optional: set Fish as default shell:
 
 ```bash
@@ -226,7 +233,17 @@ sudo cp bin/aicommit /usr/local/bun/aicommit
 sudo chmod +x /usr/local/bun/aicommit
 ```
 
-Make sure `/usr/local/bun` is in your `PATH`.
+Make sure `/usr/local/bun` is in your `PATH`:
+
+```fish
+fish_add_path /usr/local/bun
+```
+
+Verify:
+
+```bash
+command -v aicommit
+```
 
 ## 9) Optional command tools referenced by aliases
 
