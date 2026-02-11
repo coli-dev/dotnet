@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "llmgate/gpt-5.3-codex",
+      "variant": "max"
+    },
+    "hephaestus": {
+      "model": "llmgate/gpt-5.3-codex",
+      "variant": "xhigh"
+    },
+    "oracle": {
+      "model": "llmgate/claude-sonnet-4.5",
+      "variant": "high"
+    },
+    "librarian": {
+      "model": "llmgate/gpt-5.2-codex-mini",
+      "variant": "medium"
+    },
+    "explore": {
+      "model": "llmgate/gpt-5.2-codex-mini",
+      "variant": "medium"
+    },
+    "multimodal-looker": {
+      "model": "llmgate/gemini-3-flash",
+      "variant": "medium"
+    },
+    "prometheus": {
+      "model": "llmgate/claude-opus-4.6",
+      "variant": "max"
+    },
+    "metis": {
+      "model": "llmgate/gpt-5.3-codex",
+      "variant": "high"
+    },
+    "momus": {
+      "model": "llmgate/gpt-5.2",
+      "variant": "medium"
+    },
+    "atlas": {
+      "model": "llmgate/gpt-5.3-codex",
+      "variant": "medium"
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "llmgate/gemini-3-pro",
+      "variant": "low"
+    },
+    "ultrabrain": {
+      "model": "llmgate/gpt-5.3-codex",
+      "variant": "xhigh"
+    },
+    "deep": {
+      "model": "llmgate/gpt-5.3-codex",
+      "variant": "high"
+    },
+    "artistry": {
+      "model": "llmgate/gemini-3-pro",
+      "variant": "high"
+    },
+    "quick": {
+      "model": "llmgate/gpt-5.2-codex-mini",
+      "variant": "low"
+    },
+    "unspecified-low": {
+      "model": "llmgate/claude-sonnet-4.5",
+      "variant": "low"
+    },
+    "unspecified-high": {
+      "model": "llmgate/gpt-5.3-codex",
+      "variant": "high"
+    },
+    "writing": {
+      "model": "llmgate/gemini-3-flash",
+      "variant": "medium"
+    }
+  }
+}

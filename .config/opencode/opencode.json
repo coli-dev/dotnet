@@ -1,0 +1,254 @@
+{
+  "plugin": [
+    "opencode-pty@0.2.1",
+    "opencode-mem@2.7.5",
+    "@tarquinen/opencode-dcp@2.0.2",
+    "@nick-vi/opencode-type-inject@1.5.1",
+    "@bastiangx/opencode-unmoji@0.3.12",
+    "oh-my-opencode@3.5.0"
+  ],
+  "provider": {
+    "llmgate": {
+      "name": "[llmgate.dev]",
+      "npm": "@ai-sdk/anthropic",
+      "options": {
+        "baseURL": "https://gate-1.llmgate.dev/v1",
+        "apiKey": "env://LLMGATE_API_KEY"
+      },
+      "models": {
+        "gpt-5.2-codex-mini": {
+          "name": "GPT 5.2 Codex Mini",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": {
+            "medium": {
+              "reasoningEffort": "medium"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            }
+          }
+        },
+        "gpt-5.2": {
+          "name": "GPT 5.2",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "medium": {
+              "reasoningEffort": "medium"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "xhigh": {
+              "reasoningEffort": "xhigh"
+            }
+          }
+        },
+        "gpt-5.3-codex": {
+          "name": "GPT 5.3 Codex",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "medium": {
+              "reasoningEffort": "medium"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "xhigh": {
+              "reasoningEffort": "xhigh"
+            }
+          }
+        },
+        "gemini-3-pro": {
+          "name": "Gemini 3 Pro",
+          "limit": {
+            "context": 1048576,
+            "output": 65535
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": {
+            "low": {
+              "thinkingLevel": "low"
+            },
+            "high": {
+              "thinkingLevel": "high"
+            }
+          }
+        },
+        "gemini-3-flash": {
+          "name": "Gemini 3 Flash",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": {
+            "minimal": {
+              "thinkingLevel": "minimal"
+            },
+            "low": {
+              "thinkingLevel": "low"
+            },
+            "medium": {
+              "thinkingLevel": "medium"
+            },
+            "high": {
+              "thinkingLevel": "high"
+            }
+          }
+        },
+        "claude-sonnet-4.5": {
+          "name": "Claude Sonnet 4.5",
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": {
+            "low": {
+              "thinkingConfig": {
+                "thinkingBudget": 8192
+              }
+            },
+            "max": {
+              "thinkingConfig": {
+                "thinkingBudget": 32768
+              }
+            }
+          }
+        },
+        "claude-opus-4.6": {
+          "name": "Claude Opus 4.5",
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": {
+            "low": {
+              "thinkingConfig": {
+                "thinkingBudget": 8192
+              }
+            },
+            "max": {
+              "thinkingConfig": {
+                "thinkingBudget": 32768
+              }
+            }
+          }
+        },
+      }
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "env://CONTEXT7_API_KEY"
+      },
+      "enabled": true
+    },
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa,web_search_advanced_exa,get_code_context_exa,deep_search_exa,crawling_exa,company_research_exa,linkedin_search_exa,deep_researcher_start,deep_researcher_check&exaApiKey=<EXA_API_KEY>"
+    },
+    "deepwiki": {
+      "type": "remote",
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "morph-mcp": {
+      "type": "local",
+      "command": [
+        "bunx",
+        "-y",
+        "@morphllm/morphmcp"
+      ],
+      "environment": {
+        "MORPH_API_KEY": "env://MORPH_API_KEY",
+        "ENABLED_TOOLS": "edit_file,warpgrep_codebase_search"
+      }
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}
