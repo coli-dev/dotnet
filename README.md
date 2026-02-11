@@ -7,6 +7,50 @@ This repository now contains a copied and sanitized setup under:
 
 Secrets were removed and replaced with placeholders.
 
+## 0) WSL2 hostname setup (recommended on Windows)
+
+If you run this on WSL2, pin the hostname via `/etc/wsl.conf`.
+
+```bash
+sudo tee /etc/wsl.conf >/dev/null <<'EOF'
+[boot]
+systemd=true
+
+[network]
+hostname=your-hostname
+generateHosts=false
+EOF
+```
+
+Then keep Linux hostname files aligned:
+
+```bash
+echo "your-hostname" | sudo tee /etc/hostname
+sudo tee /etc/hosts >/dev/null <<'EOF'
+127.0.0.1 localhost
+127.0.1.1 your-hostname
+
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+EOF
+```
+
+Apply changes by restarting WSL from Windows PowerShell:
+
+```powershell
+wsl --shutdown
+```
+
+Then reopen distro and verify:
+
+```bash
+hostname
+cat /etc/wsl.conf
+```
+
 ## 1) Install Fish with APT
 
 ```bash

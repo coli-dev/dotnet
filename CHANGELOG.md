@@ -11,3 +11,4 @@
 - Updated tutorial with an interactive prompt script to ask users for env values and replace placeholders in copied config files.
 - Updated tutorial to install OpenCode via `brew install anomalyco/tap/opencode`.
 - Updated tutorial to install Bun explicitly via `brew install oven-sh/bun/bun`.
+- Updated setup guide with WSL2 hostname configuration (`/etc/wsl.conf`, `/etc/hostname`, `/etc/hosts`) and restart/verification steps.
